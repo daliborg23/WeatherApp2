@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: weather-app2
+  template:
+    metadata:
+      labels:
+        app: weather-app2
+    spec:
+      containers:
+        - name: weather-app
+          image: gcr.io/weatherapp2-389717/weather-app2:latest
+          ports:
+            - containerPort: 8080
