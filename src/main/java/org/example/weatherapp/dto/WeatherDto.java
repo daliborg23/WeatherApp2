@@ -1,11 +1,12 @@
 package org.example.weatherapp.dto;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class WeatherDto {
     private String location;
     private String observation_time;
-    private double temperature;
+    private double temperature; // -273.15 Kelvin to Celsius
     private String weather_descriptions;
     private double wind_speed;
     private double wind_dir;
@@ -42,7 +43,7 @@ public class WeatherDto {
         this.observation_time = observation_time;
     }
     public void setTemperature(double temperature) {
-        this.temperature = temperature;
+        this.temperature = temperature - 273.15;
     }
     public void setWeather_descriptions(String weather_descriptions) {
         this.weather_descriptions = weather_descriptions;
